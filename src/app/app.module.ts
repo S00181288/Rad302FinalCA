@@ -7,6 +7,8 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { HttpClientModule } from '@angular/common/http';
+
 /* Angular material */
 import { AngularMaterialModule } from "./angular-material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -23,9 +25,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }
