@@ -10,8 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  //registers a uer
   registerUser(user: User) {
-    //console.log("yeeeeeeeet")
     const body: User = {
       Email: user.Email,
       Password: user.Password,
@@ -21,5 +21,13 @@ export class UserService {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
     //var reqHeader = new HttpHeaders({ 'No-Auth': 'True' });
     return this.http.post(this.rootUrl + '/api/Account/Register', body, httpOptions);
+  }
+
+  //logging in 
+  userAuthentication(userName, password) {
+    const body = "username=" + userName + "&password=" + password + "&grant_type=password";
+    //var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded', 'No-Auth': 'True' });
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'No-Auth': 'True' }) };
+    return this.http.post(this.rootUrl + '/Token', body, httpOptions);
   }
 }

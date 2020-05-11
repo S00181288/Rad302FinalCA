@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 //import { RegisterModel } from '../models/register.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../User folder/user.model';
-import { UserService } from '../User folder/user.service';
+import { UserService } from '../User folder/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
       .subscribe(data => console.log("succeeded, result = " + data), (err) => console.error("Failed! " + err));
 
     //alert(this.user.Email + ' ' + this.user.Password + ' ' + this.user.ConfirmPassword);
-
   }
 
 }

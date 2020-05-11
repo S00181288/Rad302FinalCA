@@ -14,9 +14,10 @@ import { AngularMaterialModule } from "./angular-material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
