@@ -1,0 +1,50 @@
+<div *ngIf="bookData" class="form-horizontal Raised black">
+
+  <h1 id="H1">Your book search results</h1>
+
+  <img id="MainImg" *ngIf="bookData" src={{bookData.items[0].volumeInfo.imageLinks.thumbnail}}>
+  <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[0].volumeInfo.title}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[0].volumeInfo.authors}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Subtitle: {{bookData.items[0].volumeInfo.subtitle}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Publisher: {{bookData.items[0].volumeInfo.publisher}}</h1>
+  <button class="bookbutton" mat-raised-button color="primary" (click)="addBook(bookData.items[0])">Save to interested
+    list</button>
+  <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
+    already Read</button>
+
+
+</div>
+
+<div *ngIf="bookData" class="ui raised segment black">
+
+
+
+  <img id="MainImg" *ngIf="bookData" src={{bookData.items[1].volumeInfo.imageLinks.thumbnail}}>
+  <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[1].volumeInfo.title}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[1].volumeInfo.authors}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Subtitle: {{bookData.items[1].volumeInfo.subtitle}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Publisher: {{bookData.items[1].volumeInfo.publisher}}</h1>
+  <button class="bookbutton" mat-raised-button color="primary" (click)="addBook(bookData.items[0])">Save to interested
+    list</button>
+  <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
+    already Read</button>
+
+
+</div>
+
+<div *ngIf="bookData" class="form-horizontal Raised black">
+
+
+  <img id="MainImg" *ngIf="bookData" src={{bookData.items[2].volumeInfo.imageLinks.thumbnail}}>
+  <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[2].volumeInfo.title}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[2].volumeInfo.authors}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Subtitle: {{bookData.items[2].volumeInfo.subtitle}}</h1>
+  <h1 id="H1" *ngIf="bookData"> Publisher: {{bookData.items[2].volumeInfo.publisher}}</h1>
+
+  <button class="bookbutton" mat-raised-button color="primary" (click)="addBook(bookData.items[0])">Save to interested
+    list</button>
+  <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
+    already Read</button>
+
+
+</div>

@@ -1,0 +1,63 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+  }
+  
+  .example-container > * {
+    width: 100%;
+    
+  }
+  
+  /* centers h1 and makes it bigger */ 
+  .center{
+      text-align: center;
+    font-size: 3em;
+  }
+
+  /* Makes header responsive */
+  @media only screen and (max-width: 600px) {
+    .center {
+      font-size: 2em;
+    }
+  }
+
+  .bookbutton{
+    margin: 1rem;
+    background-color:#379683;
+    color: black;
+    max-width: 20rem;
+    margin: auto;
+    
+    }
+
+    .black{
+      color: #379683;
+      background-color: black;
+    }
+
+    ::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #379683 !important;
+  font-size: 1rem !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #379683 !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #379683 !important;;
+ }
+
+ body{
+   background-color: black;
+ }
+
+ /* Makes component full height of screen*/
+ .full-height {
+  height: 100vh;
+}

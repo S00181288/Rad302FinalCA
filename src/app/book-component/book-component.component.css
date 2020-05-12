@@ -1,0 +1,29 @@
+#MainImg{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+}
+
+.bookbutton{
+    margin: 1rem;
+    background-color:#379683;
+    color: black;
+    
+    }
+
+.black{
+    background-color: black;
+    color: #379683;
+}
+
+.testtrack{
+    color: #379683;
+
+    color: #5CDB95;
+
+    color: #3500
+}

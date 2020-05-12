@@ -15,9 +15,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HomeComponent } from './home/home.component';
+import { SearchFeatuerComponent } from './search-feature/search-feature.component';
+import { BookComponentComponent } from './book-component/book-component.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, SearchFeatuerComponent, BookComponentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
