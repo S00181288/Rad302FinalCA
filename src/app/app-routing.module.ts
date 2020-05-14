@@ -4,13 +4,15 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { HomeComponent } from './home/home.component';
 import { SearchFeatuerComponent } from './search-feature/search-feature.component';
+import { AuthGuardService } from './User folder/auth-guard.service';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "home", component: HomeComponent },
-  { path: "search", component: SearchFeatuerComponent }
+  { path: "home", component: HomeComponent, canActivate: [AuthGuardService] },
+  { path: "search", component: SearchFeatuerComponent, canActivate: [AuthGuardService] },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   //Helps show if error has happened on ubmit
   isLoginError: boolean = false;
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private authService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,8 +19,9 @@ export class LoginComponent implements OnInit {
 
   OnSubmit(userName, password) {
     console.log(userName, password)
-    this.userService.userAuthentication(userName, password).subscribe((data: any) => {
-      localStorage.setItem('userToken', data.access_token);
+    this.authService.userAuthentication(userName, password).subscribe((data: any) => {
+      localStorage.setItem('access_token', data.access_token);
+      //localStorage.setItem('userToken', data.access_token);
       this.router.navigate(['/home']);
 
     },

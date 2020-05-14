@@ -16,9 +16,6 @@
 </div>
 
 <div *ngIf="bookData" class="ui raised segment black">
-
-
-
   <img id="MainImg" *ngIf="bookData" src={{bookData.items[1].volumeInfo.imageLinks.thumbnail}}>
   <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[1].volumeInfo.title}}</h1>
   <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[1].volumeInfo.authors}}</h1>
@@ -33,8 +30,6 @@
 </div>
 
 <div *ngIf="bookData" class="form-horizontal Raised black">
-
-
   <img id="MainImg" *ngIf="bookData" src={{bookData.items[2].volumeInfo.imageLinks.thumbnail}}>
   <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[2].volumeInfo.title}}</h1>
   <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[2].volumeInfo.authors}}</h1>
@@ -45,6 +40,13 @@
     list</button>
   <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
     already Read</button>
-
-
 </div>
+
+
+
+<!--
+
+<div ng-repeat="items in bookData">
+  <h1> {{items.volumeInfo.title}}</h1>
+</div>
+-->

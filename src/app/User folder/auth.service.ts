@@ -4,6 +4,10 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Book } from '../search-feature/Book';
+import { Router } from '@angular/router';
+
+//For route guards
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,16 @@ import { Book } from '../search-feature/Book';
 export class UserService {
   readonly rootUrl = 'http://localhost:62959';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, public jwtHelper: JwtHelperService) { }
+
+  //This is an authenticatio service
+  public isAuthenticated(): boolean {
+    const token = localStorage.getItem("access_token");
+    // Check whether the token is expired and return
+    // true or false
+    return !this.jwtHelper.isTokenExpired(token);
+  }
+
 
   //registers a uer
   registerUser(user: User) {
@@ -32,6 +45,13 @@ export class UserService {
     //var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded', 'No-Auth': 'True' });
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'No-Auth': 'True' }) };
     return this.http.post(this.rootUrl + '/Token', body, httpOptions);
+  }
+
+  //log out of application
+  logout() {
+    //token name i access_token
+    localStorage.removeItem("access_token");
+    this.router.navigate(['/login']);
   }
 
   //get books from google api.
