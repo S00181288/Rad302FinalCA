@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   //Helps show if error has happened on ubmit
   isLoginError: boolean = false;
   constructor(private authService: UserService, private router: Router) { }
-
+  hide = true;
   ngOnInit() {
   }
 

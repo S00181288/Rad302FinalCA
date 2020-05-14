@@ -7,7 +7,8 @@
   <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[0].volumeInfo.authors}}</h1>
   <h1 id="H1" *ngIf="bookData"> Subtitle: {{bookData.items[0].volumeInfo.subtitle}}</h1>
   <h1 id="H1" *ngIf="bookData"> Publisher: {{bookData.items[0].volumeInfo.publisher}}</h1>
-  <button class="bookbutton" mat-raised-button color="primary" (click)="addBook(bookData.items[0])">Save to interested
+  <button *ngIf="bookData" class="bookbutton" mat-raised-button color="primary"
+    (click)="addBook(bookData.items[0])">Save to interested
     list</button>
   <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
     already Read</button>
@@ -15,30 +16,45 @@
 
 </div>
 
-<div *ngIf="bookData" class="ui raised segment black">
-  <img id="MainImg" *ngIf="bookData" src={{bookData.items[1].volumeInfo.imageLinks.thumbnail}}>
-  <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[1].volumeInfo.title}}</h1>
-  <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[1].volumeInfo.authors}}</h1>
-  <h1 id="H1" *ngIf="bookData"> Subtitle: {{bookData.items[1].volumeInfo.subtitle}}</h1>
-  <h1 id="H1" *ngIf="bookData"> Publisher: {{bookData.items[1].volumeInfo.publisher}}</h1>
-  <button class="bookbutton" mat-raised-button color="primary" (click)="addBook(bookData.items[0])">Save to interested
+<div *ngIf="bookData.items[1]" class="form-horizontal Raised black">
+  <img id="MainImg" *ngIf="bookData.items[1].volumeInfo.imageLinks.thumbnail"
+    src={{bookData.items[1].volumeInfo.imageLinks.thumbnail}}>
+  <h1 id="H1" *ngIf="bookData.items[1].volumeInfo.imageLinks.thumbnail"> Book Title:
+    {{bookData.items[1].volumeInfo.title}}</h1>
+  <h1 id="H1" *ngIf="bookData.items[1].volumeInfo.imageLinks.thumbnail"> Author:
+    {{bookData.items[1].volumeInfo.authors}}</h1>
+  <h1 id="H1" *ngIf="bookData.items[1].volumeInfo.imageLinks.thumbnail"> Subtitle:
+    {{bookData.items[1].volumeInfo.subtitle}}</h1>
+  <h1 id="H1" *ngIf="bookData.items[1].volumeInfo.imageLinks.thumbnail"> Publisher:
+    {{bookData.items[1].volumeInfo.publisher}}</h1>
+
+  <button *ngIf="bookData.items[1]" class="bookbutton" mat-raised-button color="primary"
+    (click)="addBook(bookData.items[1])">Save to interested
     list</button>
-  <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
+  <button *ngIf="bookData.items[1]" class="bookbutton" mat-raised-button color="primary"
+    (click)="addBookToRead(bookData.items[1])">Save to
     already Read</button>
-
-
 </div>
 
-<div *ngIf="bookData" class="form-horizontal Raised black">
-  <img id="MainImg" *ngIf="bookData" src={{bookData.items[2].volumeInfo.imageLinks.thumbnail}}>
-  <h1 id="H1" *ngIf="bookData"> Book Title: {{bookData.items[2].volumeInfo.title}}</h1>
-  <h1 id="H1" *ngIf="bookData"> Author: {{bookData.items[2].volumeInfo.authors}}</h1>
-  <h1 id="H1" *ngIf="bookData"> Subtitle: {{bookData.items[2].volumeInfo.subtitle}}</h1>
-  <h1 id="H1" *ngIf="bookData"> Publisher: {{bookData.items[2].volumeInfo.publisher}}</h1>
 
-  <button class="bookbutton" mat-raised-button color="primary" (click)="addBook(bookData.items[0])">Save to interested
+
+<div *ngIf="bookData.items[2]" class="form-horizontal Raised black">
+  <img id="MainImg" *ngIf="bookData.items[2].volumeInfo.imageLinks.thumbnail"
+    src={{bookData.items[2].volumeInfo.imageLinks.thumbnail}}>
+  <h1 id="H1" *ngIf="bookData.items[2].volumeInfo.imageLinks.thumbnail"> Book Title:
+    {{bookData.items[2].volumeInfo.title}}</h1>
+  <h1 id="H1" *ngIf="bookData.items[2].volumeInfo.imageLinks.thumbnail"> Author:
+    {{bookData.items[2].volumeInfo.authors}}</h1>
+  <h1 id="H1" *ngIf="bookData.items[2].volumeInfo.imageLinks.thumbnail"> Subtitle:
+    {{bookData.items[2].volumeInfo.subtitle}}</h1>
+  <h1 id="H1" *ngIf="bookData.items[2].volumeInfo.imageLinks.thumbnail"> Publisher:
+    {{bookData.items[2].volumeInfo.publisher}}</h1>
+
+  <button *ngIf="bookData.items[2]" class="bookbutton" mat-raised-button color="primary"
+    (click)="addBook(bookData.items[2])">Save to interested
     list</button>
-  <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
+  <button *ngIf="bookData.items[2]" class="bookbutton" mat-raised-button color="primary"
+    (click)="addBookToRead(bookData.items[2])">Save to
     already Read</button>
 </div>
 

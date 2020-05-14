@@ -1,12 +1,12 @@
 <!-- menubar -->
-<mat-toolbar>
-  <span class="fill-remaining-space">
-    <a href="www.google.ie" target="_blank" class="Digtallibrary"
-      >Digtallibrary</a
-    >
-    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
-    <a mat-button routerLink="register" routerLinkActive="active">Register</a>
-  </span>
+<mat-toolbar class="navbar ">
+
+  <span routerLink="home">Digtallibrary</span>
+  <span class="example-fill-remaining-space" mat-button routerLink="search" routerLinkActive="active">Search
+    Books</span>
+  <span class="flexSpaceBetween" mat-button (click)="logOut()" routerLinkActive="active">Logout</span>
 </mat-toolbar>
+
+
 
 <router-outlet></router-outlet>

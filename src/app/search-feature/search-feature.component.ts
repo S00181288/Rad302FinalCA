@@ -16,6 +16,7 @@ export class SearchFeatuerComponent implements OnInit {
   }
 
   getBooksInformation(bookName: string): boolean {
+    this.bookData = null;
     this.userService
       .getBookInfo(bookName)
       .subscribe(bookData => (this.bookData = bookData));
