@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-//import { RegisterModel } from '../models/register.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../User folder/user.model';
 import { UserService } from '../User folder/auth.service';
@@ -42,7 +41,6 @@ export class RegisterComponent implements OnInit {
     this.userservice.registerUser(this.user)
       .subscribe(data => console.log("succeeded, result = " + data), (err) => console.error("Failed! " + err));
 
-    //alert(this.user.Email + ' ' + this.user.Password + ' ' + this.user.ConfirmPassword);
   }
 
 }

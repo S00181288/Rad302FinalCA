@@ -20,10 +20,11 @@ import { SearchFeatuerComponent } from './search-feature/search-feature.componen
 import { BookComponentComponent } from './book-component/book-component.component';
 //auth guards
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AddBookComponent } from './add-book/add-book.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, SearchFeatuerComponent, BookComponentComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, SearchFeatuerComponent, BookComponentComponent, NewComponentComponent, AddBookComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

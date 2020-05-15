@@ -1,4 +1,16 @@
-<p>
-  home works!
-  <button (click)="logOut()">LOG OUT</button>
-</p>
+<div class="black center">
+    <div class="size">
+        <h1 class="heading" id="H1">Your Favorite Books {{UserBookData[0].UserID}}</h1>
+    </div>
+
+    <div *ngFor="let book of UserBookData" class="form-horizontal Raised black ">
+
+        <img *ngIf="!book.image" id="MainImg" src={{book.ImgURL}}>
+        <h1>Image if a valid url is provided</h1>
+        <h1> Title: {{book.Title}}</h1>
+        <h1>Subtitle: {{book.Subtitle}}</h1>
+        <h1> Publisher: {{book.Publisher}}</h1>
+        <button class="bookbutton" mat-raised-button color="primary" (click)="RemoveBookFromFave(book.BookID)">Remove
+            from library</button>
+    </div>
+</div>

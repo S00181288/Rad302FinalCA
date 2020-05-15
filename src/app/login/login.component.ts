@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
 
   OnSubmit(userName, password) {
-    console.log(userName, password)
     this.authService.userAuthentication(userName, password).subscribe((data: any) => {
       localStorage.setItem('access_token', data.access_token);
       //localStorage.setItem('userToken', data.access_token);

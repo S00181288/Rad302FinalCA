@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { User } from './user.model';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 import { Book } from '../search-feature/Book';
 import { Router } from '@angular/router';
 
 //For route guards
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { BookRes } from '../book-component/BookResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,6 @@ export class UserService {
   readonly rootUrl = 'http://localhost:62959';
 
   constructor(private http: HttpClient, private router: Router, public jwtHelper: JwtHelperService) { }
-
-  //This is an authenticatio service
-  public isAuthenticated(): boolean {
-    const token = localStorage.getItem("access_token");
-    // Check whether the token is expired and return
-    // true or false
-    return !this.jwtHelper.isTokenExpired(token);
-  }
 
 
   //registers a uer
@@ -59,9 +52,40 @@ export class UserService {
   private _siteURL = 'https://www.googleapis.com/books/v1/volumes?q=';
   private _key = '&key=AIzaSyDY7cvXQUdQc4MPrxKAzJcKke8aTAWr08k';
 
-  //Gets book info
+  //Gets book info for search feature
   getBookInfo(bookName: string): Observable<Book> {
     //console.log(bookName);
     return this.http.get<Book>(this._siteURL + bookName + this._key).pipe(tap(data => console.log('All: ' + JSON.stringify(data))));
   }
+
+  /*
+  Usersbooks: any;
+  //write call to get current users books
+  getFavoriteBooks() {
+
+    const access_token = localStorage.getItem("access_token")
+    //header to send the bearer token in request.
+    const header = new HttpHeaders({ Authorization: `Bearer ${access_token}` })
+
+    var res = this.http.get<any>(this.rootUrl + '/api/Books/Favourites', { headers: header })
+    //.pipe(tap(data => console.log('All: ' + JSON.stringify(data))))
+
+    console.log(res);
+    return res;
+
+
+  }
+
+  */
+  // get the users favorite books
+  getUsersBooks(): Observable<BookRes> {
+    const access_token = localStorage.getItem("access_token")
+    //header to send the bearer token in request.
+    const header = new HttpHeaders({ Authorization: `Bearer ${access_token}` })
+
+    var res = this.http.get<BookRes>(this.rootUrl + '/api/Books/Favourites', { headers: header })
+
+    return res
+  }
+
 }

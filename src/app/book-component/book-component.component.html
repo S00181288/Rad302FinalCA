@@ -12,8 +12,6 @@
     list</button>
   <button class="bookbutton" mat-raised-button color="primary" (click)="addBookToRead(bookData.items[0])">Save to
     already Read</button>
-
-
 </div>
 
 <div *ngIf="bookData.items[1]" class="form-horizontal Raised black">
@@ -37,7 +35,6 @@
 </div>
 
 
-
 <div *ngIf="bookData.items[2]" class="form-horizontal Raised black">
   <img id="MainImg" *ngIf="bookData.items[2].volumeInfo.imageLinks.thumbnail"
     src={{bookData.items[2].volumeInfo.imageLinks.thumbnail}}>
@@ -57,12 +54,3 @@
     (click)="addBookToRead(bookData.items[2])">Save to
     already Read</button>
 </div>
-
-
-
-<!--
-
-<div ng-repeat="items in bookData">
-  <h1> {{items.volumeInfo.title}}</h1>
-</div>
--->
