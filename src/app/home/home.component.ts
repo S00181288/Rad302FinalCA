@@ -32,9 +32,12 @@ export class HomeComponent implements OnInit {
   };
 
   RemoveBookFromFave(bookID) {
-    console.log(bookID)
+    this.userService.DeleteBook(bookID).subscribe(() => {
+      //this.dataSaved = true;  
+      //this.massage = 'Record Deleted Succefully';  
+      this.userService.getUsersBooks().subscribe(bookData => (this.UserBookData = bookData));
+    }
+    );
   }
-
 }
-
 

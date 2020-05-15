@@ -88,4 +88,13 @@ export class UserService {
     return res
   }
 
+  //Deletes a favorite book.
+  DeleteBook(bookID: number) {
+    const access_token = localStorage.getItem("access_token")
+    //header to send the bearer token in request.
+    const header = new HttpHeaders({ Authorization: `Bearer ${access_token}` })
+
+    return this.http.delete<number>(this.rootUrl + '/api/books/DeleteBook/' + bookID, { headers: header })
+  }
+
 }

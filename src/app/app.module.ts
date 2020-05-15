@@ -24,7 +24,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, SearchFeatuerComponent, BookComponentComponent, NewComponentComponent, AddBookComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, SearchFeatuerComponent, BookComponentComponent, AddBookComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
